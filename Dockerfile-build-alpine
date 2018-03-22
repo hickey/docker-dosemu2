@@ -18,11 +18,9 @@ RUN apk add --update \
   && apk add  libexecinfo-dev --update-cache --repository http://nl.alpinelinux.org/alpine/edge/main \
   # && apk add  gpm-dev --update-cache --repository http://nl.alpinelinux.org/alpine/edge/testing \
   && ( \
-    git clone https://github.com/briceburg/dosemu2.git /tmp/dosemu2 \
-    cd /tmp/dosemu2
-    make
-    ........
-  )
+    git clone https://github.com/briceburg/dosemu2.git /tmp/dosemu2  && \
+    cd /tmp/dosemu2 && \
+    make ) \
   && rm -rf /var/cache/apk/*
 
 #ENTRYPOINT ["dosemu"]

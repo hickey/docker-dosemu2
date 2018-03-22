@@ -13,8 +13,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     locale-gen C.UTF-8 en_US.UTF-8 en_us && \
     DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales && \
     update-locale LANG=C.UTF-8 && \
-    dpkg -i /tmp/dosemu2.deb && rm -rf /tmp/dosemu2.deb &&
-    apt-get update && apt-get install lhasa && \
+    dpkg -i /tmp/dosemu2.deb && rm -rf /tmp/dosemu2.deb && \
+    apt-get update && apt-get install -y lhasa && \
     cd /etc/dosemu/drives/c && \
     lhasa -x /tmp/f83v2-ms.lzh && rm /tmp/f83v2-ms.lzh
     
